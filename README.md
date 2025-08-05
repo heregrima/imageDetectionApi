@@ -1,5 +1,5 @@
 # Overview
-Hi "Candidates Name Here"
+Hi Rich
 
 Thank you for your interest in the H-E-B Digital Backend team. The first part of your Engineering interview includes producing some sample code for you to review with an interviewer during the Technical Problem Review interview. 
 
@@ -17,7 +17,7 @@ Please let us know if you have any questions in the meantime. We look forward to
 
 # Problem: Image Object Detection
 ## Overview
-Build an HTTP REST API in Java or Node.js for a service that ingests user images, analyzes them for object detection, and returns the enhanced content. A user of the full API should be able to:
+Build an HTTP REST API in Java for a service that ingests user images, analyzes them for object detection, and returns the enhanced content. A user of the full API should be able to:
 - Upload an optionally labeled image and run image object detection on it.
 - Retrieve all images and any metadata obtained from their analyses.
 - Search for images based on detected objects.
