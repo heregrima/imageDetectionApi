@@ -3,7 +3,7 @@ Hi Rich
 
 Thank you for your interest in the H-E-B Digital Backend team. The first part of your Engineering interview includes producing some sample code for you to review with an interviewer during the Technical Problem Review interview. 
 
-Before starting your project, a hiring manager or engineer will go over the details of the technical problem, ensure you have proper access to the repository, and answer Q&A giving you the opportunity to get clarification on the problem and ask any questions you may have. After this, you have 5 days to complete the assessment. We will schedule a 1-hour session to review your submission with an interviewer.
+Before starting your project, a hiring manager or engineer will go over the details of the technical problem, ensure you have proper access to the repository, and answer Q&A giving you the opportunity to get clarification on the problem and ask any questions you may have. After this, you have 5 days to complete the assessment. We will schedule a 1-1.5 hour session to review your submission with an interviewer.
 
 Please let us know if you have any questions in the meantime. We look forward to seeing your work!
 
