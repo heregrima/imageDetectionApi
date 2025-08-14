@@ -1,0 +1,176 @@
+openapi: 3.0.4
+info:
+  title: HEB Takehome API
+  description: |-
+    This is the documentation for the API that I'm creating for HEB's takehome interview exercise.  It's designed to read images, scan them and allow
+    users to deal with those images in various ways.
+  termsOfService: https://swagger.io/terms/
+  contact:
+    email: heregrima@gmail.com
+  license:
+    name: Apache 2.0
+    url: https://www.apache.org/licenses/LICENSE-2.0.html
+  version: 1.0.0
+tags:
+  - name: images
+    description: Everything dealing with images in this exercise
+  - name: store
+    description: Access to Petstore orders
+    externalDocs:
+      description: Find out more about our store
+      url: https://swagger.io
+  - name: user
+    description: Operations about user
+paths:
+  /images:
+    post:
+      tags:
+        - images
+      summary: Add a new image with metadata
+      description: Add a new image with metadata
+      operationId: addImage
+      requestBody:
+        description: Create an image row with metadata
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Images'
+        required: true
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ImagesResponse'
+        '400':
+          description: Invalid input
+        '422':
+          description: Validation exception
+        default:
+          description: Unexpected error
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+    get:
+      tags:
+        - images
+      summary: Finds stored image data
+      description: Finds stored image data.  May include an optional parameter that holds an array of objects detected in the images
+      operationId: getImages
+      parameters:
+        - name: objects
+          in: query
+          description: Detected objects to filter by
+          required: false
+          explode: true
+          schema:
+            type: array
+            items:
+              type: string
+
+      responses:
+        '200':
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/ImagesResponse'
+        '400':
+          description: Invalid status value
+        default:
+          description: Unexpected error
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+  /images/{imageId}:
+    get:
+      tags:
+        - images
+      summary: Find image by ID.
+      description: Returns a single image.
+      operationId: getImageById
+      parameters:
+        - name: imageId
+          in: path
+          description: ID of image to return
+          required: true
+          schema:
+            type: integer
+            format: int64
+      responses:
+        '200':
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ImagesResponse'
+        '400':
+          description: Invalid ID supplied
+        '404':
+          description: Image not found
+        default:
+          description: Unexpected error
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+components:
+  schemas:
+    Images:
+      required:
+        - url
+      type: object
+      properties:
+        url:
+          type: string
+          example: "www.image.com/imageName.jpg"
+        label:
+          type: string
+          example: "dog picture"
+        enableObjectDetection:
+          type: boolean
+          example: true
+    ImagesResponse:
+      type: object
+      properties:
+        url:
+          type: string
+          example: "www.image.com/imageName.jpg"
+        label:
+          type: string
+          example: "dog picture"
+        enableObjectDetection:
+          type: boolean
+          example: true
+        id:
+          type: integer
+          example: 1
+        objectsDetected:
+          type: array
+          items:
+            $ref: '#/components/schemas/ImageObject'
+    ImageObject:
+      type: object
+      properties:
+        name:
+          type: string
+          example: "dog"
+    Error:
+      type: object
+      properties:
+        code:
+          type: string
+        message:
+          type: string
+      required:
+        - code
+        - message
+servers:
+  # Added by API Auto Mocking Plugin
+  - description: SwaggerHub API Auto Mocking
+    url: https://virtserver.swaggerhub.com/heregrimaorganizatio/HEB-Images/1.0.0

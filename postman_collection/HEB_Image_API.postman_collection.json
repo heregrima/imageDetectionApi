@@ -1,0 +1,149 @@
+{
+	"info": {
+		"_postman_id": "5b0a184c-170f-499a-8c6c-7ef4a4349979",
+		"name": "HEB Image API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "624608"
+	},
+	"item": [
+		{
+			"name": "/images GET",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/images",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"images"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/images GET with multiple objects",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/images?objects=mountain,dog",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"images"
+					],
+					"query": [
+						{
+							"key": "objects",
+							"value": "mountain,dog"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/images GET with single object",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/images?objects=mountain",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"images"
+					],
+					"query": [
+						{
+							"key": "objects",
+							"value": "mountain"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/images GET with ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/images/2",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"images",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/images POST with mock",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"uri\": \"https://hips.hearstapps.com/hmg-prod/images/dog-puppy-on-garden-royalty-free-image-1586966191.jpg?crop=0.752xw:1.00xh;0.175xw,0&resize=1200:*\",\r\n  \"label\": \"dog\",\r\n  \"enableObjectDetection\": false\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/images",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"images"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/images POST with API access",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"uri\": \"https://docs.imagga.com/static/images/docs/sample/japan-605234_1280.jpg\",\r\n  \"label\": \"mountain\",\r\n  \"enableObjectDetection\": true\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/images",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"images"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
