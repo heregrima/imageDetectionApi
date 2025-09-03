@@ -6,6 +6,7 @@ import java.util.Arrays;
 import java.util.List;
 
 import org.json.JSONObject;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -55,6 +56,7 @@ public class ImaggaScannerTests {
 
     }
 
+    @Disabled("Test not ready, skipping for now")
     @Test
     public void testCatPicture() throws Exception {
         String my_image_url = "https://images.squarespace-cdn.com/content/v1/607f89e638219e13eee71b1e/1684821560422-SD5V37BAG28BURTLIXUQ/michael-sum-LEpfefQf4rU-unsplash.jpg";

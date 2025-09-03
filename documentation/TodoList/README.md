@@ -33,6 +33,10 @@ This list is stuff that I would like to stretch for if I have time
 - refactor to use service/repository pattern to separate business and data logic
 - fill in the rest of the unit tests
 - set up various items as config settings pulled from the standard config file for Spring Boot
+- set up a Factory for the ImaggaScanner stuff
+- refactor for caching (md5 image to make sure the image is unique in the image data)
+- refactor to do the caching in a separate thread or via Kafka
+- using Redis to store the key-value pairs for url/imageObjects
 
 ## Expected Challenges
 - Used Swagger to make small changes, but never set up an API doc from scratch
